@@ -10,7 +10,7 @@ console.log(falsyOrTruthy(null, 5))
 
 // given an array return its length
 
-function arrLength(arr){
+function arrLength(arr) {
     return arr.length;
 }
 
@@ -54,7 +54,7 @@ function calcTime(seconds) {
     let timerMinutes = Math.floor(seconds / 60);
     let timerSeconds = seconds % 60;
 
-    if (timerMinutes.toString().length === 1){
+    if (timerMinutes.toString().length === 1) {
         timerMinutes = '0' + timerMinutes
     }
 
@@ -92,7 +92,7 @@ console.log(reverseString('abc'))
 // turn every element in an array into 0's
 
 function convertToZeros(arr) {
-   // return new Array(arr.length).fill(0);  (array fill)
+    // return new Array(arr.length).fill(0);  (array fill)
     return arr.map(elem => 0);
 }
 
@@ -108,8 +108,8 @@ function removeApples(arr) {
             noApples.push(arr[i]);
         }
     }
-    return noApples 
-    
+    return noApples
+
 }
 
 console.log(removeApples(['Banana', 'Orange', 'Apple']))
@@ -130,4 +130,42 @@ function convertToBoolean(arr) {
 
 console.log(convertToBoolean(['', NaN, null, false, true]))
 
- 
+
+
+
+// ADVANCED CHALLENGES
+
+//given a rating, display a star for each full rating and a dot for each half rating
+
+function showRating(rating) {
+    let ratings = "";
+    for (let i = 0; i < Math, floor(rating); ++i) {
+        ratings += "*"
+        if (i !== Math.floor(rating) - 1) {
+            ratings += " ";
+        }
+    }
+    if (!Number.isInteger(rating)) {
+        ratings += " ."
+    }
+    return ratings;
+}
+
+console.log(showRating(4))
+
+// given an array of numbers, sort the numbers low to high
+
+function sortLowToHigh(numbers) {
+    return numbers.sort((a, b) => a - b);
+}
+
+console.log(sortLowToHigh([1, 5, 0, 10, 1000, 2]))
+
+//given an array of objects, sort the prices high to low
+
+function sortHighToLow() {
+    return numbers.sort((a, b) => b.price - a.price)
+}
+
+console.log(sortHighToLow([{ id: 1, price: 50 }, { id: 2, price: 0 }, { id: 3, price: -500 },]))
+
