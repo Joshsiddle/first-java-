@@ -169,3 +169,30 @@ function sortHighToLow() {
 
 console.log(sortHighToLow([{ id: 1, price: 50 }, { id: 2, price: 0 }, { id: 3, price: -500 },]))
 
+// call this API "https://jsonplaceholder.typicode.com/posts" and return all the posts by any given user id
+
+async function postsByUser(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+    
+    const results = await promise.json()
+
+    const posts = results.filter(element => element.uderId === userId)
+
+    console.log(posts)
+}
+
+postsByUser(6);
+
+//call this API "https://jsonplaceholder.typicode.com/todos" and return the first 6 incomplete todo's from the result.
+
+async function firstSixIncomplete(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+    
+    const results = await promise.json()
+
+    const incompleteTasks = results.filter(elem => !elem.completed).slice(0, 6);
+
+    console.log(incompleteTasks);
+}
+
+postsByUser(6);
